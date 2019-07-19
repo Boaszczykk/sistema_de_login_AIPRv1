@@ -7,10 +7,17 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
         <title>Sistema de Login</title>
+        <style>
+            #caixaCadastro, 
+            #caixaRecuperarSenha,
+            #alerta{
+                display:none;
+            }
+        </style>
     </head>
-<body class="bg-dark">
-    <main class= "container mt-4">
-    <!--Conteúdo Principal-->
+    <body class="bg-dark">
+        <main class= "container mt-4">
+        <!--Conteúdo Principal-->
         <section class="row">
             <div class="col-lg-4 offset-lg-4" id="alerta">
                 <div class="alert alert-success text-center">
@@ -40,12 +47,11 @@
                     <div class="form-group">
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" name="lembrar" id="lembrar" class="custom-control-input">
-                            <label for="lembrar" class="custom-control-label">
+                                <label for="lembrar" class="custom-control-label">
                                 Lembrar de mim
-                            </label>
+                                </label>
                             <a href="#" id="btnEsqueci" class="float-right">
-                            Esqueci a Senha!
-                            </a>
+                            Esqueci a Senha!</a>
                         </div>
                     </div>
 
@@ -63,11 +69,109 @@
                 </form>
             </div>
         </section>
+        <br>
+
+        <!-- Formulário de Cadastro -->
+        <section class="row mb-5">
+            <div class="col-lg-4 offset-lg-4 bg-light rounded" id="caixaCadastro">
+                <h2 class="text-center">Cadastro de Novo Usuário</h2>
+                    <form action="#" class="p-2" id="frmCadastro">
+                        <div class="form-group">
+                            <input type="text" name="nomeCompleto" id="nomeCompleto" class="form-control" placeholder="Nome Completo" required> 
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="nomeUsuário" id="nomeUsuário" class="form-control" placeholder="Nome de Usuário" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" name="emailUsuário" id="emailUsuário" class="form-control" placeholder="E-mail de Usuário" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="password" name="senhaUsuário" id="senhaUsuário" class="form-control" placeholder="Digite sua Senha" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="password" name="senhaConfirma" id="senhaConfirma" class="form-control" placeholder="Confirme sua Senha" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" name="concordar" id="concordar" class="custom-control-input">
+                                <label for="concordar" class="custom-control-label">
+                                Eu Concordo com os <a href="#">Termos e Condições</a>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="submit" value="::Cadastrar::" class="btn btn-primary btn-block" id="btnRegistrar">
+                        </div>
+                        
+                        <div class="form-group">
+                            <p class="text-center">
+                            Já Cadastrado? <a href="#" id="btnJaCadastrado">Entrar Aqui</a>
+                            </p>
+                        </div>
+                    </form>
+            </div>
+        </section>
+
+        <!--Formulário de recuperação de senha -->
+        <section class="row mb-5">
+            <div class="col-lg-4 offset-lg-4 bg-light rounded" id="caixaRecuperarSenha">
+                <h2 class="text-center">Gerar Nova Senha</h2>
+                    <form action="#" id="formSenha">
+                        <div class="form-group">
+                            <small class="text-center">
+                                Para Gerar uma Nova Senha, Digite seu E-mail e Receba as Instruções.
+                            </small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" name="emailSenha" id="emailSenha" class="form-control" placeholder="E-mail" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="submit" value="::Enviar E-mail::" id="btn=EnviarEmail" class="btn btn-primary btn-block">
+                        </div>
+                        
+                        <div class="form-group float-right">
+                            <a href="#" id="btnVoltar">Voltar</a>
+                        </div>
+                    </form>
+            </div>
+        </section>
 
     </main>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script>
+            // jQuery
+            $(function(){
+                $("#btnEsqueci").click(function(){
+                    $("#caixaLogin").hide();
+                    $("#caixaRecuperarSenha").show();
+                });
+
+                $("#btnVoltar").click(function(){
+                    $("#caixaRecuperarSenha").hide();
+                    $("#caixaLogin").show();
+                });
+
+                 $("#btnCadastrar").click(function(){
+                    $("#caixaLogin").hide();
+                    $("#caixaCadastro").show();
+                });
+
+                $("#btnJaCadastrado").click(function(){
+                    $("#caixaLogin").show();
+                    $("#caixaCadastro").hide();
+                });
+            });
+        </script>
 </body>
 </html>
