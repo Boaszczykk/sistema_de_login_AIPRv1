@@ -148,20 +148,20 @@
                         data: $('#formLogin').serialize() + '&action=login',
                         success: function(resposta) {
                             $('#alerta').show();
-                            $('#resultado').html(resposta);
+                            $('#resultado').html("resposta:" + resposta);
                         }
                     });
                 }
             });
             //Formulário de Cadastro de usuário
             $('#btnRegistrar').click(function(e) {
-                let formLogin = document.querySelector("#formCadastro");
-                if (formLogin.checkValidity()) {
-                    e.preventDefault(); //Não recarregar a página
+                let formCadastro = document.querySelector("#formCadastro");
+                if (formCadastro.checkValidity()) {
+                    e.preventDefault(); //Sem recarregar o formulário
                     $.ajax({
                         url: 'recebe.php',
                         method: 'post',
-                        data: $('#formCadastro').serialize() + '&action=login',
+                        data: $('#formCadastro').serialize() + '&action=cadastro',
                         success: function(resposta) {
                             $('#alerta').show();
                             $('#resultado').html(resposta);
@@ -171,13 +171,13 @@
             });
             //Formulário para mudar de senha
             $('#btnEnviarEmail').click(function(e) {
-                let formLogin = document.querySelector("#formSenha");
-                if (formLogin.checkValidity()) {
+                let formSenha = document.querySelector('#formSenha');
+                if (formSenha.checkValidity()) {
                     e.preventDefault(); //Não recarregar a página
                     $.ajax({
                         url: 'recebe.php',
                         method: 'post',
-                        data: $('#formSenha').serialize() + '&action=login',
+                        data: $('#formSenha').serialize() + '&action=senha',
                         success: function(resposta) {
                             $('#alerta').show();
                             $('#resultado').html(resposta);
@@ -185,7 +185,6 @@
                     });
                 }
             });
-
             //Trocar da Tela de Login para Recuperar Senha
             $("#btnEsqueci").click(function() {
                 $("#caixaLogin").hide();
