@@ -1,9 +1,9 @@
 <?php
+//Inicializando a sessão
+session_start();
 
 // É necessário fazer a conexão com o Banco de Dados
 require_once "configDB.php";
-
-
 function verificar_entrada($entrada)
 {
     $saida = trim($entrada); //Remove espaços antes e depois
@@ -12,12 +12,28 @@ function verificar_entrada($entrada)
     return $saida;
 }
 
+if(isset($_POST['action']) && $_POST['action'] == 'login'){
+    //Verificação e login do usuário
+    $nomeUsuario = verificar_entrada($_POST['nomeUsuario']);
+    $senhaUsuario = verificar_entrada($_POST['senhaUsuario']);
+    $senha = sha1($senhaUsuario);
+    //para teste
+    //echo "Usuário: $nomeUsuario - senha:$senha";
+    $sql = $conecta->prepare("SELECT * FROM usuario  WHERE nomeUsuario = ? AND senha = ?");
+    $sql->bind_param("ss", $nomeUsuario, $senha);
+    $sql->execute();
 
-if (
-    isset($_POST['action']) &&
-    $_POST['action'] == 'cadastro'
-) {
-    //Pegar os campos do formulário
+    $busca = $sql->fetch();
+    if($busca != null){
+        echo "Okay";
+    }else{
+        echo "Usuário e senha não conferem!";
+    }
+}
+
+//Cdastro de um novo usuário
+else if ( isset($_POST['action']) && $_POST['action'] == 'cadastro'
+) { //Pegar os campos do formulário
     $nomeCompleto = verificar_entrada($_POST['nomeCompleto']);
     $nomeUsuario = verificar_entrada($_POST['nomeUsuário']);
     $emailUsuario = verificar_entrada($_POST['emailUsuário']);

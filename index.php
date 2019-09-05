@@ -33,12 +33,15 @@
             <div class="col-lg-4 offset-lg-4 bg-light rounded" id="caixaLogin">
                 <h2 class="text-center mt-2">Entrada no sistema</h2>
                 <form id="formLogin" class="p-2">
+
                     <div class="form-group">
                         <input type="text" name="nomeUsuario" id="nomeUsuario" class="form-control" placeholder="Nome do usuário" minlength="5" required>
                     </div>
+
                     <div class="form-group">
                         <input type="password" name="senhaUsuario" id="senhaUsuario" class="form-control" placeholder="Senha" required minlength="6">
                     </div>
+
                     <div class="form-group mt-5">
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" name="lembrar" id="lembrar" class="custom-control-input">
@@ -148,7 +151,10 @@
                         data: $('#formLogin').serialize() + '&action=login',
                         success: function(resposta) {
                             $('#alerta').show();
-                            $('#resultado').html("resposta:" + resposta);
+                            $('#resultado').html(resposta);
+                            if (resposta == "Okay"){
+                                window.location = 'profile.php';
+                            }
                         }
                     });
                 }
