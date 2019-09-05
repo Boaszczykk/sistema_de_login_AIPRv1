@@ -2,7 +2,8 @@
 Sistema de Login com registro de novo usuário e recuperação de senha
 
 ## aula07 - 05/09/2019
-
+Criação do redirecionamento profile.php,
+do session.php e sair.php 
 
 ## aula06 - 20/08/2019
 Última sexta-seira de agosto de 2019!

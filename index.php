@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(isset($SESSION['nomeUsuario']))
+        //Bloqueando Usuário logados
+        header("location: profile.php");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -152,7 +159,7 @@
                         success: function(resposta) {
                             $('#alerta').show();
                             $('#resultado').html(resposta);
-                            if (resposta == "Okay"){
+                            if (resposta === "Okay"){
                                 window.location = 'profile.php';
                             }
                         }
