@@ -48,6 +48,7 @@ require_once 'session.php';
     </nav>
 
     <main class="container mt-4">
+        <img src="<?=$avatar?>" alt="Foto de <?=$usuario?>"
         <h1 class="text-light">Perfil de usuário</h1>
         <h2 class="text-light">Nome:<?= $nome ?></h2>
         <h2 class="text-light">E-mail:<?= $email ?></h2>

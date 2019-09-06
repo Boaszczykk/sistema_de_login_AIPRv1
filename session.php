@@ -16,6 +16,7 @@ if(isset($_SESSION['nomeUsuario'])){
     $nome = $linha['nome'];
     $email= $linha['email'];
     $datacriacao=$linha['datacriacao'];
+    $urlAvatar=$linha['avatar'];
 } else{
     //kick
     header("location:index.php");

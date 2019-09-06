@@ -1,8 +1,8 @@
 <?php
-    session_start();
-    if(isset($SESSION['nomeUsuario']))
-        //Bloqueando Usuário logados
-        header("location: profile.php");
+session_start();
+if (isset($SESSION['nomeUsuario']))
+    //Bloqueando Usuário logados
+    header("location: profile.php");
 ?>
 
 <!DOCTYPE html>
@@ -86,6 +86,9 @@
                         <input type="email" name="emailUsuário" id="emailUsuário" class="form-control" placeholder="E-mail de Usuário" required>
                     </div>
                     <div class="form-group">
+                        <input type="url" name="urlAvatar" id="urlAvatar" class="form-control" placeholder="URL para imagem do seu perfil" required>
+                    </div>
+                    <div class="form-group">
                         <input type="password" name="senhaUsuário" id="senhaUsuário" class="form-control" placeholder="Digite sua senha" minlength="6" required>
                     </div>
                     <div class="form-group">
@@ -159,7 +162,7 @@
                         success: function(resposta) {
                             $('#alerta').show();
                             $('#resultado').html(resposta);
-                            if (resposta === "Okay"){
+                            if (resposta === "Okay") {
                                 window.location = 'profile.php';
                             }
                         }

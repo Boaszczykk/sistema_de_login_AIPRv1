@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 23-Ago-2019 às 14:20
+-- Tempo de geração: 06-Set-2019 às 16:44
 -- Versão do servidor: 10.3.16-MariaDB
 -- versão do PHP: 7.3.7
 
@@ -30,19 +30,26 @@ USE `sistemadelogin`;
 --
 -- Estrutura da tabela `usuario`
 --
--- Criação: 23-Ago-2019 às 17:09
--- Última actualização: 23-Ago-2019 às 17:09
---
 
-DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
   `idUsuario` int(10) UNSIGNED NOT NULL,
   `nome` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   `nomeUsuario` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   `email` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   `senha` char(40) COLLATE utf8mb4_bin NOT NULL,
-  `datacriacao` datetime NOT NULL
+  `datacriacao` datetime NOT NULL,
+  `avatar` varchar(200) COLLATE utf8mb4_bin NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`idUsuario`, `nome`, `nomeUsuario`, `email`, `senha`, `datacriacao`, `avatar`) VALUES
+(1, 'Dom Pedro II', 'Dom_Pedro', 'dom.pedro@gmail.com', 'dd5fef9c1c1da1394d6d34b248c51be2ad740840', '2019-09-06 14:22:30', ''),
+(2, 'Kaylaine Maria Boaszczyk', 'Boaszczyk', 'kaylainemaria@gmail.com', 'f49085b1ee4481b96d883c3364721d3814b1e21d', '2019-09-06 14:52:49', ''),
+(3, 'Boaszczyk', 'Boaszczyk_kay', 'boaszczyk@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '2019-09-06 14:54:42', ''),
+(4, 'JoÃ£o Mario Torrezani', 'Torrezani', 'mario@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '2019-09-06 14:58:03', '');
 
 --
 -- Índices para tabelas despejadas
@@ -63,7 +70,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `idUsuario` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
