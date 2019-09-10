@@ -1,6 +1,10 @@
 # sistema_de_login_AIPR2019v1
 Sistema de Login com registro de novo usuário e recuperação de senha
 
+##aula09 - 10/09/2019
+O botão lembrar de mim em funcionamento.
+lembra o usuário e a senha
+
 ## aula08 - 06/09/2019
 Criação de um avatar(imagem), salva no banco de dados. Já na sessão.
 
