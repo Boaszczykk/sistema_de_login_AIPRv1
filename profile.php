@@ -53,7 +53,7 @@ require_once 'session.php';
 
         <div class="row">
             <div class="offset-lg-2 col-3">
-                <img src="<?= $avatar ?>" alt="Foto de <?= $usuario ?>" height="200" width="200" />
+                <img src="<?= $urlAvatar ?>" alt="Foto de <?= $usuario ?>" height="200" width="200" />
             </div>
 
             <div class="col-7">
