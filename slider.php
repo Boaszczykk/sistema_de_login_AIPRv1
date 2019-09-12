@@ -63,21 +63,21 @@ require_once 'session.php';
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="images/carro.1600X1006.jpg" class="d-block w-100" alt="carro">
-                        <div class="carousel-caption d-none d-md-block text-dark">
+                        <div class="carousel-caption d-none d-md-block text-dark bg-light">
                             <h5>Automóvel</h5>
                             <p>Carro Azul</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="images/guerra.1600X1006.jpg" class="d-block w-100" alt="guerra">
-                        <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel-caption d-none d-md-block bg-dark">
                             <h5>Batalha</h5>
                             <p>Uma batalha armada</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="images/herois.1600X1006.png" class="d-block w-100" alt="herois">
-                        <div class="carousel-caption d-none d-md-block text-dark">
+                        <div class="carousel-caption d-none d-md-block text-dark bg-light">
                             <h5>Heróis</h5>
                             <p>Um belo conjunto de heróis</p>
                         </div>

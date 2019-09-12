@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06-Set-2019 às 16:44
+-- Tempo de geração: 12-Set-2019 às 16:37
 -- Versão do servidor: 10.3.16-MariaDB
 -- versão do PHP: 7.3.7
 
@@ -38,18 +38,21 @@ CREATE TABLE `usuario` (
   `email` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   `senha` char(40) COLLATE utf8mb4_bin NOT NULL,
   `datacriacao` datetime NOT NULL,
-  `avatar` varchar(200) COLLATE utf8mb4_bin NOT NULL
+  `avatar` varchar(200) COLLATE utf8mb4_bin NOT NULL,
+  `token` char(10) COLLATE utf8mb4_bin NOT NULL,
+  `tempo_de_vida` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Extraindo dados da tabela `usuario`
 --
 
-INSERT INTO `usuario` (`idUsuario`, `nome`, `nomeUsuario`, `email`, `senha`, `datacriacao`, `avatar`) VALUES
-(1, 'Dom Pedro II', 'Dom_Pedro', 'dom.pedro@gmail.com', 'dd5fef9c1c1da1394d6d34b248c51be2ad740840', '2019-09-06 14:22:30', ''),
-(2, 'Kaylaine Maria Boaszczyk', 'Boaszczyk', 'kaylainemaria@gmail.com', 'f49085b1ee4481b96d883c3364721d3814b1e21d', '2019-09-06 14:52:49', ''),
-(3, 'Boaszczyk', 'Boaszczyk_kay', 'boaszczyk@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '2019-09-06 14:54:42', ''),
-(4, 'JoÃ£o Mario Torrezani', 'Torrezani', 'mario@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '2019-09-06 14:58:03', '');
+INSERT INTO `usuario` (`idUsuario`, `nome`, `nomeUsuario`, `email`, `senha`, `datacriacao`, `avatar`, `token`, `tempo_de_vida`) VALUES
+(1, 'Dom Pedro II', 'Dom_Pedro', 'dom.pedro@gmail.com', 'dd5fef9c1c1da1394d6d34b248c51be2ad740840', '2019-09-06 14:22:30', '', '', '2019-09-12 19:30:18'),
+(2, 'Kaylaine Maria Boaszczyk', 'Boaszczyk', 'kaylainemaria@gmail.com', 'f49085b1ee4481b96d883c3364721d3814b1e21d', '2019-09-06 14:52:49', '', '', '2019-09-12 19:30:18'),
+(3, 'Boaszczyk', 'Boaszczyk_kay', 'boaszczyk@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '2019-09-06 14:54:42', '', '', '2019-09-12 19:30:18'),
+(4, 'JoÃ£o Mario Torrezani', 'Torrezani', 'mario@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '2019-09-06 14:58:03', '', '', '2019-09-12 19:30:18'),
+(5, 'Detetive', 'detetive', 'detetive@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '2019-09-12 13:23:11', 'https://thumbs.jusbr.com/filters:format(webp)/imgs.jusbr.com/publications/noticias/images/detetive-lupa-oculto1492432416.png', '', '2019-09-12 19:30:18');
 
 --
 -- Índices para tabelas despejadas
@@ -70,7 +73,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idUsuario` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
