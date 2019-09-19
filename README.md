@@ -2,6 +2,8 @@
 Sistema de Login com registro de novo usuário e recuperação de senha
 
 ## aula11 - 19/09/2019
+Sitema de recuperação de senha,
+sem envio de Email
 
 ## aula10 - 12/09/2019
 Criado o slider.php para mostrar uma carrossel de imagens.
