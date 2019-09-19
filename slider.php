@@ -38,13 +38,11 @@ require_once 'session.php';
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <?= $usuario ?>
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="#">Fotos</a>
                             <a class="dropdown-item" href="#">Configurações</a>
                             <a class="dropdown-item" href="sair.php">Sair</a>
                         </div>
-                    </div>
                 </li>
             </ul>
         </div>

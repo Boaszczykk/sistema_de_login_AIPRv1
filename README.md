@@ -1,6 +1,8 @@
 # sistema_de_login_AIPR2019v1
 Sistema de Login com registro de novo usuário e recuperação de senha
 
+## aula11 - 19/09/2019
+
 ## aula10 - 12/09/2019
 Criado o slider.php para mostrar uma carrossel de imagens.
 link para gerar nova senha.
